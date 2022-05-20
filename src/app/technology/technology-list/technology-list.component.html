@@ -1,0 +1,29 @@
+<p>technology-list works example mock data!</p>
+<ul>
+    <ng-template ngFor let-technology [ngForOf]="technologies | async " let-i="index">
+    <li>{{technology.name_technology}}</li>
+    </ng-template>
+</ul>
+
+<p>jobs-list works!</p>
+<ul>
+    <ng-template ngFor let-job [ngForOf]="jobs | async " let-i="index">
+    <li>{{job.name_job}}</li>
+    </ng-template>
+</ul>
+
+<p>jobs-list and tech works!</p>
+<ul>
+    <ng-template ngFor let-jobstechs [ngForOf]="jobsAndTechs | async " let-i="index">
+    <li> 
+        {{jobstechs.id }} 
+        {{jobstechs.name_job }}
+        {{jobstechs.id_technology}}
+        {{jobstechs.name_technology}}
+    </li>
+    </ng-template>
+</ul>
+
+
+
+
