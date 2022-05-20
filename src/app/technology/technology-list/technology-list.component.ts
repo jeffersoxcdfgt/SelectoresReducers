@@ -22,16 +22,16 @@ class JobsAndTechs implements Jobs, Technology {
 })
 export class TechnologyListComponent implements OnInit {
 
-  technologies : Observable<Technology[]> =  of<Technology[]>()
-  jobs : Observable<Jobs[]> =  of<Jobs[]>()
-  jobsAndTechs : Observable<JobsAndTechs[]> =  of<JobsAndTechs[]>()
+  technologies$ : Observable<Technology[]> =  of<Technology[]>()
+  jobs$ : Observable<Jobs[]> =  of<Jobs[]>()
+  jobsAndTechs$ : Observable<JobsAndTechs[]> =  of<JobsAndTechs[]>()
 
   constructor(private store :Store<AppState>){ }
 
   ngOnInit(): void {
-    this.technologies =this.store.select(selectAllTechnologies);
-    this.jobs = this.store.select(selectAllJobs);
-    this.jobsAndTechs =  this.store.select(selectedTecnologisWithJobs);
+    this.technologies$ =this.store.select(selectAllTechnologies);
+    this.jobs$ = this.store.select(selectAllJobs);
+    this.jobsAndTechs$ =  this.store.select(selectedTecnologisWithJobs);
 
   }
 
